@@ -31,7 +31,7 @@ const UserDetails = () => {
   // Fetch user's employment details (if available)
   const { data: employmentData, isLoading: employmentLoading } = useQuery({
     queryKey: ['employment-details', userId],
-    queryFn: () => employmentApi.get(),
+    queryFn: () => employmentApi.getForUser(userId),
     enabled: !!userId,
     retry: 2,
   });
@@ -256,7 +256,7 @@ const UserDetails = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="text-center p-4 bg-blue-50 rounded-lg">
                     <p className="text-2xl font-bold text-blue-600">
-                      {user.loanRequests || 0}
+                      {loans.length}
                     </p>
                     <p className="text-sm text-blue-600">Total Loan Requests</p>
                   </div>
