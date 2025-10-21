@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Search, Filter, Eye, DollarSign, Calendar, User, CheckCircle, XCircle, Clock, Loader2 } from 'lucide-react';
+import { Search, Filter, Eye, IndianRupee, Calendar, User, CheckCircle, XCircle, Clock, Loader2 } from 'lucide-react';
 import { adminApi } from '@/lib/api';
 
 const LoanRequests = () => {
@@ -70,11 +70,7 @@ const LoanRequests = () => {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold text-gray-900">Loan Requests</h2>
-          <p className="text-gray-600">Review and manage all loan applications</p>
-        </div>
+      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-end">
         <div className="flex gap-2">
           <Button variant="outline">Export Data</Button>
           <Button>Bulk Actions</Button>
@@ -125,7 +121,7 @@ const LoanRequests = () => {
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center gap-2">
-              <DollarSign className="h-5 w-5 text-blue-600" />
+              <IndianRupee className="h-5 w-5 text-blue-600" />
               <div>
                 <p className="text-2xl font-bold">
                   {loansLoading ? <Loader2 className="h-6 w-6 animate-spin" /> : 
